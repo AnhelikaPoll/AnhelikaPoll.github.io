@@ -1,0 +1,97 @@
+/* ---------- Глобальные настройки ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Лавандово-фиолетовый градиентный фон */
+    background: linear-gradient(145deg, #e6d5f5 0%, #b19cd9 40%, #7b4b9a 100%);
+    font-family: 'Press Start 2P', monospace; /* пиксельный шрифт */
+    padding: 20px;
+}
+
+/* ---------- Контейнер с необычной формой ---------- */
+.resume-card {
+    max-width: 800px;
+    width: 100%;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border-radius: 40px 10px 40px 10px;   /* асимметричные скругления */
+    box-shadow: 0 20px 40px rgba(60, 20, 80, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    /* Необычная форма с помощью clip-path */
+    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+    transition: clip-path 0.3s ease;
+}
+
+/* При наведении форма меняется – ещё больше необычности */
+.resume-card:hover {
+    clip-path: polygon(2% 0%, 98% 0%, 100% 98%, 0% 100%);
+}
+
+/* ---------- Заголовок ---------- */
+h1 {
+    font-size: 28px;
+    color: #4a0404;          /* тёмно-бордовый */
+    text-shadow: 3px 3px 0 #d4b8e0, 6px 6px 0 rgba(74, 4, 4, 0.3);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-align: center;
+    word-break: break-word;
+    border-bottom: 4px dashed #800000;
+    padding-bottom: 15px;
+}
+
+/* ---------- Параграфы ---------- */
+p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #2d0a33;          /* насыщенный фиолетовый */
+    background: rgba(255, 235, 250, 0.5);
+    padding: 20px 25px;
+    border-radius: 30px 5px 30px 5px;   /* ещё одна необычная форма */
+    margin-bottom: 20px;
+    border-left: 6px solid #800000;     /* бордовый акцент */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(2px);
+    transition: transform 0.2s;
+}
+
+p:hover {
+    transform: scale(1.02);
+    background: rgba(255, 235, 250, 0.7);
+}
+
+/* Убираем отступ у последнего параграфа */
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* ---------- Акцент (бордовый) ---------- */
+.accent {
+    color: #800000;
+    font-weight: bold;
+    text-shadow: 0 0 8px #e6b8d9;
+}
+
+/* ---------- Адаптив для маленьких экранов ---------- */
+@media (max-width: 600px) {
+    .resume-card {
+        padding: 30px 20px;
+        clip-path: polygon(0% 0%, 100% 0%, 98% 100%, 2% 100%);
+    }
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 11px;
+        padding: 15px;
+    }
+}
